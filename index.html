@@ -24,5 +24,100 @@
     <h1>USC 3D Campus</h1>
     <p>University Park Campus · First prototype</p>
   </header>
+  <aside id="mapControls" aria-label="Map controls">
+  <h2>Explore USC</h2>
+
+  <button id="returnToCampus" type="button">
+    Return to campus
+  </button>
+
+  <label for="buildingMode">Building model</label>
+  <select id="buildingMode">
+    <option value="campus">Our campus model</option>
+    <option value="osm">Cesium OSM Buildings</option>
+    <option value="none">Hide buildings</option>
+  </select>
+
+  <label class="layer-option">
+    <input id="showBoundary" type="checkbox" checked>
+    Study-area boundary
+  </label>
+
+  <label class="layer-option">
+    <input id="showLandmarks" type="checkbox" checked>
+    Campus landmarks
+  </label>
+
+  <!-- Building search -->
+  <label for="buildingSearch">Find a building</label>
+
+  <input
+    id="buildingSearch"
+    type="search"
+    placeholder="Try Hoffman or Musick"
+    autocomplete="off"
+  >
+
+  <ul id="searchResults" aria-label="Building search results"></ul>
+
+  <p id="searchMessage" role="status"></p>
+
+  <p id="modelNote" role="status"></p>
+  <details id="projectAbout">
+  <summary>About this project</summary>
+
+  <p>
+    An independent student prototype exploring USC's
+    University Park Campus in 3D.
+    This is not an official USC map.
+  </p>
+
+  <p>
+    <strong>Our campus model:</strong>
+    Building footprints downloaded from OpenStreetMap,
+    clipped and prepared in GeoLibre, then displayed
+    with CesiumJS.
+  </p>
+
+  <p>
+    <strong>Accuracy:</strong>
+    The current model uses estimated building heights,
+    generally 12 metres. The study-area boundary and
+    landmark locations are approximate.
+  </p>
+
+  <p>
+    <strong>Other layers:</strong>
+    Cesium World Terrain and Cesium OSM Buildings
+    are streamed through Cesium ion.
+  </p>
+
+  <p>
+    Building footprints:
+    ©
+    <a
+      href="https://www.openstreetmap.org/copyright"
+      target="_blank"
+      rel="noopener noreferrer"
+    >OpenStreetMap contributors</a>,
+    available under the Open Database License.
+  </p>
+
+  <p>
+    Tools:
+    <a
+      href="https://geolibre.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >GeoLibre</a>
+    and
+    <a
+      href="https://cesium.com/platform/cesiumjs/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >CesiumJS</a>.
+  </p>
+</details>
+</aside>
 </body>
 </html>
