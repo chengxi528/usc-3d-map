@@ -33,3 +33,129 @@ p {
   margin: 0;
   font-size: 13px;
 }
+.mac-controls {
+  padding: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.mac-controls p {
+  margin: 10px 0;
+}
+
+.mac-controls strong {
+  color: #ffcc00;
+}
+
+.mac-controls small {
+  display: block;
+  color: #cccccc;
+}
+#mapControls {
+  position: absolute;
+  left: 20px;
+  bottom: 70px;
+  width: 230px;
+  max-width: calc(100vw - 80px);
+  max-height: 40vh;
+  overflow-y: auto;
+  padding: 18px;
+  color: #fff;
+  background: rgba(30, 25, 25, 0.94);
+  border-top: 3px solid #ffcc00;
+  border-radius: 8px;
+}
+
+#mapControls h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+#mapControls button,
+#mapControls select {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 10px;
+  font: inherit;
+  border: 0;
+  border-radius: 4px;
+}
+
+#mapControls button {
+  color: #fff;
+  background: #990000;
+  cursor: pointer;
+}
+
+#mapControls label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+#mapControls .layer-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#modelNote {
+  margin: 12px 0 0;
+  color: #ffdf80;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#buildingSearch {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font: inherit;
+}
+
+#searchResults {
+  margin: 8px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#searchResults button {
+  margin-bottom: 5px;
+  padding: 8px;
+  text-align: left;
+  background: #493636;
+}
+
+#searchResults button:hover,
+#searchResults button:focus-visible {
+  background: #774343;
+}
+
+#searchMessage {
+  margin: 6px 0;
+  color: #ddd;
+  font-size: 12px;
+}
+#projectAbout {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #666;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#projectAbout summary {
+  color: #ffdf80;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#projectAbout p {
+  margin: 10px 0;
+}
+
+#projectAbout a {
+  color: #ffdf80;
+}
