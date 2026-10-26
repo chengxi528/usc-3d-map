@@ -98,25 +98,53 @@ mouseHelp.innerHTML = `
 `;
 // loadBuildings function
 async function loadBuildings() {
-  try {
-    // Add real ground elevation.
-    viewer.terrainProvider =
-      await Cesium.createWorldTerrainAsync();
+  // Request terrain and buildings independently.
+  const [terrainResult, buildingsResult] =
+    await Promise.allSettled([
+      Cesium.createWorldTerrainAsync(),
+      Cesium.createOsmBuildingsAsync()
+    ]);
 
-    // Add buildings positioned above that ground.
-    const buildings =
-      await Cesium.createOsmBuildingsAsync();
+  function reportFailure(layerName, error) {
+    const status = error?.statusCode ?? "not provided";
+
+    const message = String(
+      error?.message || "No additional message"
+    )
+      .replace(/eyJ[A-Za-z0-9_.-]+/g, "[TOKEN HIDDEN]")
+      .replace(
+        /access_token=[^&\s]+/gi,
+        "access_token=[TOKEN HIDDEN]"
+      );
+
+    console.error(layerName + " failed:", {
+      status,
+      message
+    });
+
+    alert(
+      layerName + " failed.\n" +
+      "HTTP status: " + status + "\n" +
+      "Details: " + message
+    );
+  }
+
+  if (terrainResult.status === "fulfilled") {
+    viewer.terrainProvider = terrainResult.value;
+    console.log("Terrain loaded successfully.");
+  } else {
+    reportFailure("Terrain", terrainResult.reason);
+  }
+
+  if (buildingsResult.status === "fulfilled") {
+    const buildings = buildingsResult.value;
 
     viewer.scene.primitives.add(buildings);
     registerProjectLayer("osm", buildings);
-    console.log("Terrain and buildings loaded.");
-  } catch (error) {
-    console.error("Could not load the campus:", error);
 
-    alert(
-      "Terrain or buildings could not load. " +
-      "Check your Cesium token and internet connection."
-    );
+    console.log("OSM buildings loaded successfully.");
+  } else {
+    reportFailure("OSM Buildings", buildingsResult.reason);
   }
 }
 
