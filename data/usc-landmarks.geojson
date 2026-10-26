@@ -1,0 +1,37 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tommy Trojan",
+        "description": "Campus landmark in Hahn Plaza. This prototype marker uses an approximate location.",
+        "category": "Landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.28543358288815,
+          34.02056788041345
+        ]
+      },
+      "id": "0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Doheny Memorial Library",
+        "description": "USC library on Trousdale Parkway. This prototype marker uses an approximate location.",
+        "category": "Library"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.28373843084142,
+          34.0201634407634
+        ]
+      },
+      "id": "1"
+    }
+  ]
+}

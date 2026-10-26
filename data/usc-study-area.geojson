@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "USC prototype study area"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.292,
+              34.018
+            ],
+            [
+              -118.28,
+              34.018
+            ],
+            [
+              -118.28,
+              34.027
+            ],
+            [
+              -118.292,
+              34.027
+            ],
+            [
+              -118.292,
+              34.018
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
